@@ -97,14 +97,8 @@ app.get('/secure', (req, res) => {
 
 
 
-
-
-
-
-
-
-
-/* arranque */
-http.createServer(app).listen(8001, () => {
-    console.log('Server started at http://localhost:8001');
+// Listen to the App Engine-specified port, or 8080 otherwise
+const PORT = 8080;
+app.listen(PORT, () => {
+    console.log(`Server listening on port ${PORT}...`);
 });
