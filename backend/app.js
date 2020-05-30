@@ -30,7 +30,7 @@ app.use(bodyParser.json({ limit: '10mb' }))
 app.use(cors())
 
 /* request */
-app.get('/', (req, res) => {
+app.get('/hola', (req, res) => {
     res.statusCode = 200;
     res.setHeader('Content-Type', 'text/plain');
     res.end('Hola Mundo');
@@ -98,7 +98,9 @@ app.get('/secure', (req, res) => {
 
 
 // Listen to the App Engine-specified port, or 8080 otherwise
-const PORT = 8080;
+// Start the server
+const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
-    console.log(`Server listening on port ${PORT}...`);
+    console.log(`App listening on port ${PORT}`);
+    console.log('Press Ctrl+C to quit.');
 });

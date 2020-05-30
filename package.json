@@ -4,7 +4,7 @@
     "description": "prueba de backend y frontend en google cloud plataforma con nodejs",
     "main": "index.js",
     "scripts": {
-        "start": "node ./backend/app.js",
+        "start": "npm i && cd ./backend && npm i && node ./app.js",
         "test": "echo \"Error: no test specified\" && exit 1"
     },
     "repository": {
