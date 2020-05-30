@@ -1,0 +1,23 @@
+{
+    "name": "frontyback",
+    "version": "1.0.0",
+    "description": "prueba de backend y frontend en google cloud plataforma con nodejs",
+    "main": "index.js",
+    "scripts": {
+        "start": "node ./backend/app.js",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/luloop/apiNodeJS.git"
+    },
+    "author": "luloop",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/luloop/apiNodeJS/issues"
+    },
+    "homepage": "https://github.com/luloop/apiNodeJS#readme",
+    "dependencies": {
+        "concurrently": "^5.2.0"
+    }
+}
