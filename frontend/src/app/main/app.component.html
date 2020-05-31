@@ -1,0 +1,31 @@
+<!-- Page Preloder -->
+<div id="preloder">
+    <div class="loader"></div>
+</div>
+
+<header class="header-section clearfix ">
+    <a href="index.html" class="site-logo">
+        <img src="../../assets/img/logo.png" alt="">
+    </a>
+
+    <ul class="main-menu mt-4">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="#">Sobre mi</a></li>
+        <li><a href="#">Trabajo</a>
+            <ul class="sub-menu">
+                <li><a href="category.html">Ejemplo de Frontend</a></li>
+                <li><a href="playlist.html">Ejemplo de Backoffice</a></li>
+                <li><a href="artist.html">Documentacion</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </li>
+        <li class="mr-4  font-weight-bold"><a href="mailto:lucilarizzi@gmail.com">Contactame</a>
+        </li>
+        <li><button type="button" class="ml-4 btn btn-outline-default btn-rounded waves-effect" style="border-radius: 25px;" (click)="openLogin()">Login API</button>
+        </li>
+    </ul>
+</header>
+
+<router-outlet></router-outlet>
+
+<app-pie></app-pie>

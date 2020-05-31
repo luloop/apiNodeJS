@@ -1,0 +1,31 @@
+<div class="hero-section pt-5 pb-5 unique-color-dark">
+    <owl-carousel #owlElement [options]="SlideOptions" [items]="Images" [carouselClasses]="['owl-theme', 'sliding']">
+        <div class="item" *ngFor="let img of Images">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 my-auto">
+                        <div class="pt-3" style="height:100%;">
+                            <span style="font-size: 60pt; color: red; font-weight: 600 ;  font-family: 'Rubik', sans-serif; line-height: 30pt;">{{respuesta}}<br>
+                                <span style=" font-weight: 600; font-size:45pt; color: white">
+                                    {{img.text}}
+                                </span></span>
+
+                            <div class="my-4 h3">
+                                <p style="color: white;">Si llegasta aca no se que paso, pero no anda nada, sry </p>
+                            </div>
+                            <div class="my-3 h3">
+                                <a href="https://github.com/luloop/apiNodeJS" class="site-btn mr-2">Documentacion</a>
+                                <a href="https://github.com/luloop/apiNodeJS" class="site-btn sb-c2">Github</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div style="align-content: center">
+                            <img style="height:100%;width:auto" src={{img.img}} />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </owl-carousel>
+</div>

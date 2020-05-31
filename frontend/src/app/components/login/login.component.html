@@ -1,0 +1,54 @@
+<div class="float-right" [mat-dialog-close]="true">X</div>
+
+<div class="wrap-login100">
+    <div class="login100-form-title" style="background-image: url('../assets/img/blog/1.jpg');">
+        <span class="login100-form-title-1" style="font-family: 'Poppins'; font-weight: 600;">
+            Hola!
+        </span>
+    </div>
+
+    <form class="login100-form  " [formGroup]="formulario" (ngSubmit)="enviarDato(formulario.value)">
+        <div class="wrap-input100  mt-4" data-validate="Username is required">
+            <span class="label-input100">Usuario</span>
+            <input matInput class="input100 " id="name" type="text" formControlName="name" placeholder="Enter username">
+            <span class="focus-input100"></span>
+            <div *ngIf="formulario.controls['name'].invalid && (formulario.controls['name'].dirty || formulario.controls['name'].touched)">
+                <div *ngIf="formulario.controls['name'].errors.required" style="font-size: 9pt; color: red;">
+                    Falta el usuario
+                </div>
+            </div>
+        </div>
+
+
+        <div class="wrap-input100  mt-4 " data-validate="Password is required">
+            <span class="label-input100">Clave</span>
+            <input matInput class="input100" type="password" name="pass" formControlName="pass" id="pass" placeholder="Enter password">
+            <span class="focus-input100"></span>
+        </div>
+        <div *ngIf="formulario.controls['pass'].invalid && (formulario.controls['pass'].dirty || formulario.controls['pass'].touched)">
+            <div *ngIf="formulario.controls['pass'].errors.required" style="font-size: 9pt; color: red;">
+                Falta la clave
+            </div>
+        </div>
+
+
+        <div class="flex-sb-m w-full p-b-30 mt-3">
+            <div class="contact100-form-checkbox">
+                <input class="input-checkbox100" id="ckb1" type="checkbox">
+                <label class="label-checkbox100" for="ckb1">
+                    Recuerdaaaaame
+                </label>
+            </div>
+
+            <div>
+                <a class="txt1" mat-raised-a #tooltip="matTooltip" matTooltip="usuario: oscar pass: 1234" aria-label="Button that displays a tooltip that hides when scrolled out of the container" class="example-button">
+                    No tenes usuario?
+                </a>
+            </div>
+        </div>
+
+        <div class="container-login100-form-btn">
+            <button class="login100-form-btn" type="submit" [disabled]="!formulario.valid "> Login </button>
+        </div>
+    </form>
+</div>
