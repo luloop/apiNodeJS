@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { retry, catchError } from 'rxjs/operators';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +12,7 @@ export class ApiService {
 
   API_KEY = 'YOUR_API_KEY';
 
-  constructor(private httpClient: HttpClient, private alert: MatSnackBar) { }
+  constructor(private httpClient: HttpClient, private alert: MatSnackBar, private router: Router) { }
 
 
   public getNews() {
@@ -21,20 +22,11 @@ export class ApiService {
   public logIn(nombre, pass) {
     const headers = {
       "cache-control": "no-cache",
-      "content-type": "application/x-www-form-urlencoded"
+      'content-type': 'application/json'
     }
-    const body = { user: name, password: pass }
+    const body = { user: nombre, password: pass };
 
-    return this.httpClient.post<any>('/login', body, { headers }).subscribe(
-      res => {
-        console.log('HTTP response', res
-        )
-      },
-      err => {
-        this.alert.open(err.error.error);
-        console.log('HTTP Error', err)
-      }
-    )
+    return this.httpClient.post<any>('http://localhost:3001/login', JSON.stringify(body), { headers });
 
   }
   public traerIndustrias() {

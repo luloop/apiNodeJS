@@ -7,7 +7,7 @@
         </span>
     </div>
 
-    <form class="login100-form  " [formGroup]="formulario" (ngSubmit)="enviarDato(formulario.value)">
+    <form class="login100-form  " [formGroup]="formulario" (ngSubmit)="enviarDato(formulario.value)" id="logIn">
         <div class="wrap-input100  mt-4" data-validate="Username is required">
             <span class="label-input100">Usuario</span>
             <input matInput class="input100 " id="name" type="text" formControlName="name" placeholder="Enter username">

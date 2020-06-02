@@ -11,6 +11,11 @@ import { LoginComponent } from './components/login/login.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { PieComponent } from './components/pie/pie.component';
 import { SliderHomeComponent } from './components/slider-home/slider-home.component';
+import { ModalConfirmacionComponent } from './components/modal-confirmacion/modal-confirmacion.component';
+import { DialogoNotificacionesComponent } from './components/notificaciones/notificaciones/dialogo-notificaciones/dialogo-notificaciones.component';
+
+import { DirectivaNotificacionesDirective } from './components/notificaciones/notificaciones/directiva-notificaciones.directive';
+import { NotificacionesService } from './services/notificaciones.service';
 
 @NgModule({
   declarations: [
@@ -18,17 +23,18 @@ import { SliderHomeComponent } from './components/slider-home/slider-home.compon
     InicioComponent,
     LoginComponent,
     PieComponent,
-    SliderHomeComponent
+    SliderHomeComponent,
+    ModalConfirmacionComponent, DialogoNotificacionesComponent, DirectivaNotificacionesDirective
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule, ReactiveFormsModule,
-    AngularMaterialModule, HttpClientModule, OwlModule
+    AngularMaterialModule, HttpClientModule, OwlModule,
 
   ],
-  providers: [],
+  providers: [NotificacionesService],
   bootstrap: [AppComponent],
-  entryComponents: [LoginComponent] 
+  entryComponents: [LoginComponent, DialogoNotificacionesComponent]
 })
 export class AppModule { }
