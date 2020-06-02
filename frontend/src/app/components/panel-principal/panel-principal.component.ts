@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-panel-principal',
@@ -7,9 +7,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PanelPrincipalComponent implements OnInit {
 
+
+
   constructor() { }
 
   ngOnInit() {
   }
+
+
+  @HostListener('window:scroll', ['$event'])
+  onWindowScroll(e) {
+    let element = document.getElementById('sidenav-main');
+    element.setAttribute('style', 'width:58px')
+    let element2 = document.getElementById('panel');
+    element2.setAttribute('style', 'width: calc(100vw-58px); margin-left:58px !important')
+  }
+
+
 
 }

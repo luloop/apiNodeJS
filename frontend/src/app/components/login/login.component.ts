@@ -45,7 +45,7 @@ export class LoginComponent implements OnInit {
     this.http.logIn(value.name, value.pass).subscribe(
       res => {
         console.log('HTTP response', res);
-        this.alert.open("token generado " + res);
+        this.alert.open("token generado exitosamente");
         this.router.navigateByUrl("/hola");
         this.cerrar = true;
         this.dialogRef.close();
