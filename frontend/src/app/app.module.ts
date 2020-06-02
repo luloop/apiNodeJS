@@ -16,6 +16,7 @@ import { DialogoNotificacionesComponent } from './components/notificaciones/noti
 
 import { DirectivaNotificacionesDirective } from './components/notificaciones/notificaciones/directiva-notificaciones.directive';
 import { NotificacionesService } from './services/notificaciones.service';
+import { PanelPrincipalComponent } from './components/panel-principal/panel-principal.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,7 @@ import { NotificacionesService } from './services/notificaciones.service';
     LoginComponent,
     PieComponent,
     SliderHomeComponent,
-    ModalConfirmacionComponent, DialogoNotificacionesComponent, DirectivaNotificacionesDirective
+    ModalConfirmacionComponent, DialogoNotificacionesComponent, DirectivaNotificacionesDirective, PanelPrincipalComponent
   ],
   imports: [
     BrowserModule,

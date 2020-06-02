@@ -49,15 +49,17 @@ export class LoginComponent implements OnInit {
         this.router.navigateByUrl("/hola");
         this.cerrar = true;
         this.dialogRef.close();
-
       },
       err => {
         this.cerrar = false;
+        /* agregar animacion */
         document.getElementById('logIn').classList.add("animate__bounce");
         document.getElementById('logIn').classList.add("animate__animated");
+        /* ! agregar animacion */
         this.formulario.controls['pass'].setValue('');
         this.alert.open(err.error.error);
         console.log('HTTP Error', err)
+        /*  espera 3 segundo y saca la animacion */
         setTimeout(()=>{document.getElementById('logIn').classList.remove("animate__bounce");
         document.getElementById('logIn').classList.remove("animate__animated");},3000)
       }
