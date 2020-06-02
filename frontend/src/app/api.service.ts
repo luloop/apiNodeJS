@@ -25,7 +25,7 @@ export class ApiService {
     }
     const body = { user: name, password: pass }
 
-    return this.httpClient.post<any>('https://backcero.rj.r.appspot.com/login', body, { headers }).subscribe(
+    return this.httpClient.post<any>('/login', body, { headers }).subscribe(
       res => {
         console.log('HTTP response', res
         )
@@ -38,7 +38,7 @@ export class ApiService {
 
   }
   public traerIndustrias() {
-    return this.httpClient.get('https://backcero.rj.r.appspot.com/industrias/id');
+    return this.httpClient.get('/industrias/id');
   }
 
 

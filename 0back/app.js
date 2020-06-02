@@ -18,7 +18,17 @@ var bodyParser = require('body-parser')
 var express = require('express');
 var http = require('http');
 var cors = require('cors');
-var app = express();
+const path = require('path');
+const app = express();
+const port = process.env.PORT || 3001;
+
+app.use(express.static(__dirname + '/dist'));
+
+app.get('/*', (req, res) => res.sendFile(path.join(__dirname)));
+
+const server = http.createServer(app);
+
+
 
 /* token */
 app.use(bodyParser.urlencoded({ extended: false }))
@@ -30,7 +40,7 @@ app.use(bodyParser.json({ limit: '10mb' }))
 app.use(cors())
 
 /* request */
-app.get('/', (req, res) => {
+app.get('/hola', (req, res) => {
     res.statusCode = 200;
     res.setHeader('Content-Type', 'text/plain');
     res.end('Hola Mundo');
@@ -97,8 +107,6 @@ app.get('/secure', (req, res) => {
 
 
 
-// Listen to the App Engine-specified port, or 8080 otherwise
-const PORT = 8080;
-app.listen(PORT, () => {
-    console.log(`Server listening on port ${PORT}...`);
-});
+
+
+server.listen(port, () => console.log(`App running on: http://localhost:${port}`));
