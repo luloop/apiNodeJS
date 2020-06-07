@@ -26,11 +26,12 @@ export class ApiService {
     }
     const body = { user: nombre, password: pass };
 
-    return this.httpClient.post<any>('http://localhost:3001/login', JSON.stringify(body), { headers });
+    /* return this.httpClient.post<any>('/login', JSON.stringify(body), { headers }); */
+    return this.httpClient.post<any>('https://us-central1-luloopprueba.cloudfunctions.net/app/login', JSON.stringify(body), { headers });
 
   }
   public traerIndustrias() {
-    return this.httpClient.get('/industrias/id');
+    return this.httpClient.get('https://us-central1-luloopprueba.cloudfunctions.net/app/industrias/id');
   }
 
 
